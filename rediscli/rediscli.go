@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func binary2string(inData []byte) (outData string) {
+func Binary2string(inData []byte) (outData string) {
 	outData += "\""
 
 	for _, b := range inData {
@@ -42,7 +42,7 @@ func binary2string(inData []byte) (outData string) {
 	return outData
 }
 
-func string2binary(inData string) (outData []byte, err error) {
+func String2binary(inData string) (outData []byte, err error) {
 	if len(inData) <= 2 {
 		return outData, errors.New("error len")
 	}
