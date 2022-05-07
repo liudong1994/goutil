@@ -43,12 +43,10 @@ func Binary2string(inData []byte) (outData string) {
 }
 
 func String2binary(inData string) (outData []byte, err error) {
-	if len(inData) <= 2 {
-		return outData, errors.New("error len")
-	}
-
 	// 去掉开头结尾的"
-	inData = inData[1:len(inData)-1]
+	if len(inData) >= 2 && inData[0] == '"' && inData[len(inData)-1] == '"' {
+		inData = inData[1:len(inData)-1]
+	}
 
 	for i:=0; i<len(inData); i++ {
 		switch inData[i] {
