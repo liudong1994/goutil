@@ -4,7 +4,6 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"strconv"
 )
 
 func Binary2string(inData []byte) (outData string) {
@@ -28,7 +27,8 @@ func Binary2string(inData []byte) (outData string) {
 		case '\b':
 			outData += "\\b"
 		default:
-			if strconv.IsPrint(rune(b)) {
+			if 0x20 <= b && b <= 0x7E {
+				// 可打印
 				outData += string(b)
 			} else {
 				// 不可打印字符, 打印它的16进制
