@@ -12,7 +12,7 @@ import (
 	"google.golang.org/protobuf/reflect/protoregistry"
 )
 
-func Rediscli2pb(pbMsgName string, redisData string) (string, error) {
+func Rediscli2pb2json(pbMsgName string, redisData string) (string, error) {
 	// redisdata转换pb数据 打印
 	redisBinaryData, _ := rediscli.String2binary(redisData)
 
