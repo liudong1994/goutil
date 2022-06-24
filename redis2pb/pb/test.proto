@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+// 生成路径设置, 命令：protoc --go_out=./ ./test.proto
+option go_package ="./;pb";
+
+message TestInfo {
+    int32 type = 1;
+    repeated TestMessage message = 2;
+}
+
+message TestMessage {
+    string time = 1;
+}
+
